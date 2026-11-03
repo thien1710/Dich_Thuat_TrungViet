@@ -3,147 +3,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Hệ thống dịch thuật Trung - Việt thông minh, nhanh chóng và chuẩn xác, hỗ trợ học tập và giao thương.">
-    <meta name="keywords" content="dịch thuật, tiếng Trung, tiếng Việt, dịch Trung Việt, tra cứu ngôn ngữ">
     <title>Dịch Thuật Trung - Việt</title>
-
-    <!-- Open Graph / Social Media -->
-    <meta property="og:title" content="Dịch Thuật Trung - Việt">
-    <meta property="og:description" content="Hệ thống chuyển ngữ Việt - Trung thông minh, nhanh chóng và chuẩn xác.">
-    <meta property="og:type" content="website">
-
-    <!-- Stylesheets -->
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-
-    <!-- Overlay làm mờ nền -->
+    <!-- Background Overlay -->
     <div class="bg-overlay"></div>
 
-    <!-- Header & Navigation -->
-    <header class="header">
+    <!-- Header Navigation -->
+    <header class="navbar">
         <div class="logo">
-            <i class="fa-solid fa-language" aria-hidden="true"></i>
-            <span>Dịch Thuật Trung - Việt</span>
+            <h1>Dịch Thuật Trung - Việt</h1>
         </div>
-        <nav class="nav-links" aria-label="Điều hướng chính">
-            <a href="#overview"><i class="fa-solid fa-house" aria-hidden="true"></i> Tổng quan</a>
-            <a href="#language-info"><i class="fa-solid fa-book-open" aria-hidden="true"></i> Ngôn ngữ</a>
-            <a href="#translator-section"><i class="fa-solid fa-arrow-right-arrow-left" aria-hidden="true"></i> Dịch thuật</a>
-            <a href="#contact"><i class="fa-solid fa-envelope" aria-hidden="true"></i> Liên hệ</a>
+        <nav>
+            <ul>
+                <li><a href="#tong-quan">Tổng Quan</a></li>
+                <li><a href="#ngon-ngu">Ngôn Ngữ</a></li>
+                <li><a href="#dich-thuat">Dịch Thuật</a></li>
+                <li><a href="#lien-he">Liên Hệ</a></li>
+            </ul>
         </nav>
     </header>
 
     <main class="container">
-        <!-- Banner Tiêu đề -->
-        <section class="hero-banner">
-            <h1>Dịch Thuật Trung - Việt</h1>
-            <p>Hệ thống chuyển ngữ Việt - Trung thông minh, nhanh chóng và chuẩn xác.</p>
-        </section>
-
-        <!-- Mục lục 1: Giới thiệu tổng quan về web -->
-        <section id="overview" class="card-section">
-            <h2 class="section-title"><i class="fa-solid fa-circle-info" aria-hidden="true"></i> Giới Thiệu Tổng Quan Về Web</h2>
-            <div class="content-grid">
+        <!-- Section 1: Giới thiệu tổng quan -->
+        <section id="tong-quan" class="card">
+            <h2>Giới Thiệu Tổng Quan</h2>
+            <div class="section-content">
                 <div class="text-block">
-                    <p>Trang web <strong>Dịch Thuật Trung - Việt</strong> được phát triển nhằm mang đến công cụ tra cứu và chuyển đổi ngôn ngữ mượt mà, phục vụ đắc lực cho nhu cầu học tập, du lịch và giao thương.</p>
-                    <p>Giao diện được thiết kế hiện đại với tông xanh dương chủ đạo, tốc độ phản hồi tức thì giúp tối ưu hóa trải nghiệm cho mọi người dùng.</p>
+                    <p>Chào mừng bạn đến với nền tảng <strong>Dịch Thuật Trung - Việt</strong> chuyên nghiệp. Chúng tôi cung cấp công cụ chuyển ngữ chính xác, tối ưu hóa công nghệ nhằm hỗ trợ học tập, làm việc và trao đổi văn hóa giữa hai ngôn ngữ một cách hiệu quả nhất.</p>
                 </div>
                 <div class="image-block">
-                    <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=800&auto=format&fit=crop" alt="Tổng quan giao diện trang web dịch thuật" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=800&auto=format&fit=crop" alt="Hình ảnh tổng quan công nghệ dịch thuật">
                 </div>
             </div>
         </section>
 
-        <!-- Mục lục 2: Giới thiệu về ngôn ngữ Trung - Việt -->
-        <section id="language-info" class="card-section">
-            <h2 class="section-title"><i class="fa-solid fa-earth-asia" aria-hidden="true"></i> Giới Thiệu Về Ngôn Ngữ Trung - Việt</h2>
-            <div class="content-grid reverse">
-                <div class="text-block">
-                    <p>Tiếng Việt và tiếng Trung có sự gắn kết sâu sắc trong tiến trình lịch sử văn hóa. Hệ thống từ vựng Hán-Việt phong phú chính là cầu nối vững chắc giúp người Việt Nam tiếp thu tiếng Trung dễ dàng hơn.</p>
-                    <p>Việc kết hợp giữa cấu trúc ngữ pháp độc đáo của hai ngôn ngữ mở ra không gian giao lưu văn hóa và hợp tác vô cùng rộng mở trong thời kỳ hội nhập.</p>
-                </div>
+        <!-- Section 2: Giới thiệu ngôn ngữ Trung - Việt -->
+        <section id="ngon-ngu" class="card">
+            <h2>Về Ngôn Ngữ Trung Quốc & Việt Nam</h2>
+            <div class="section-content reverse">
                 <div class="image-block">
-                    <img src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?q=80&w=800&auto=format&fit=crop" alt="Văn hóa và Ngôn ngữ Trung - Việt" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?q=80&w=800&auto=format&fit=crop" alt="Hình ảnh giao thoa văn hóa ngôn ngữ">
+                </div>
+                <div class="text-block">
+                    <p>Tiếng Trung (Hán ngữ) và Tiếng Việt sở hữu mối liên hệ lịch sử và văn hóa lâu đời. Việc thấu hiểu cấu trúc từ vựng Hán-Việt cũng như ngữ pháp tinh tế của cả hai ngôn ngữ là chìa khóa quan trọng để tạo nên những bản dịch chuẩn xác, tự nhiên và sát nghĩa nhất.</p>
                 </div>
             </div>
         </section>
 
-        <!-- Mục lục 3: Khung bảng dịch thuật (Việt <-> Trung) -->
-        <section id="translator-section" class="card-section translator-card">
-            <h2 class="section-title"><i class="fa-solid fa-language" aria-hidden="true"></i> Dịch Thuật Trung - Việt</h2>
-            
+        <!-- Section 3: Khung Dịch thuật -->
+        <section id="dich-thuat" class="card highlight-card">
+            <h2>Công Cụ Dịch Thuật</h2>
             <div class="translator-box">
-                <!-- Thanh điều khiển ngôn ngữ -->
                 <div class="translator-controls">
-                    <span id="source-lang-label" class="lang-tag">Tiếng Việt (VI)</span>
-                    <button id="swap-btn" type="button" title="Đổi chiều ngôn ngữ" aria-label="Đổi chiều ngôn ngữ dịch">
-                        <i class="fa-solid fa-right-left" aria-hidden="true"></i>
-                    </button>
-                    <span id="target-lang-label" class="lang-tag">Tiếng Trung (ZH)</span>
+                    <span id="label-source" class="lang-label">Tiếng Việt</span>
+                    <button id="btn-swap" title="Đảo chiều ngôn ngữ">⇄ Đổi Chiều</button>
+                    <span id="label-target" class="lang-label">Tiếng Trung</span>
                 </div>
-
-                <!-- Khu vực nhập & xuất văn bản -->
-                <div class="translator-io">
-                    <div class="input-area">
-                        <label for="source-text" class="sr-only">Văn bản gốc</label>
-                        <textarea id="source-text" placeholder="Nhập văn bản tiếng Việt tại đây..." maxlength="5000" spellcheck="false"></textarea>
-                        <div class="io-footer">
-                            <span id="char-count">0 / 5000</span>
-                            <button id="clear-btn" type="button" class="btn-secondary" aria-label="Xóa nội dung đã nhập">
-                                <i class="fa-solid fa-trash-can" aria-hidden="true"></i> Xóa
-                            </button>
-                        </div>
+                
+                <div class="translator-panels">
+                    <div class="panel">
+                        <textarea id="source-text" placeholder="Nhập văn bản cần dịch tại đây..."></textarea>
                     </div>
-                    <div class="output-area">
-                        <label for="target-text" class="sr-only">Bản dịch</label>
-                        <textarea id="target-text" readonly placeholder="Bản dịch tiếng Trung sẽ hiển thị ở đây..." spellcheck="false"></textarea>
-                        <div class="io-footer">
-                            <button id="copy-btn" type="button" class="btn-secondary" aria-label="Sao chép bản dịch">
-                                <i class="fa-solid fa-copy" aria-hidden="true"></i> Sao chép
-                            </button>
-                        </div>
+                    <div class="panel">
+                        <textarea id="target-text" readonly placeholder="Bản dịch sẽ hiển thị ở đây..."></textarea>
                     </div>
                 </div>
 
-                <!-- Nút hành động dịch -->
                 <div class="action-bar">
-                    <button id="translate-btn" type="button" class="btn-primary">
-                        <i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i> Dịch Ngay
-                    </button>
+                    <button id="btn-translate">Dịch Ngay</button>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- Cuối trang: Thông tin liên hệ -->
-    <footer id="contact" class="footer">
+    <!-- Footer: Thông tin liên hệ -->
+    <footer id="lien-he">
         <div class="footer-container">
-            <h3><i class="fa-solid fa-address-book" aria-hidden="true"></i> Thông Tin Liên Hệ</h3>
-            <div class="contact-cards">
+            <h3>Thông Tin Liên Hệ</h3>
+            <div class="contact-grid">
                 <div class="contact-card">
-                    <i class="fa-solid fa-user-gear contact-icon" aria-hidden="true"></i>
-                    <div class="contact-info">
-                        <h4>Lê Ngọc Tâm</h4>
-                        <p><i class="fa-solid fa-phone" aria-hidden="true"></i> <a href="tel:0909220635">0909220635</a></p>
-                        <p><i class="fa-solid fa-envelope" aria-hidden="true"></i> <a href="mailto:lngtam35@gmail.com">lngtam35@gmail.com</a></p>
-                    </div>
+                    <h4>Lê Ngọc Tâm</h4>
+                    <p><strong>Điện thoại:</strong> 0909220635</p>
+                    <p><strong>Email:</strong> lngtam35@gmail.com</p>
                 </div>
                 <div class="contact-card">
-                    <i class="fa-solid fa-user-gear contact-icon" aria-hidden="true"></i>
-                    <div class="contact-info">
-                        <h4>Huỳnh Ánh Dương</h4>
-                        <p><i class="fa-solid fa-phone" aria-hidden="true"></i> <a href="tel:0919943843">0919943843</a></p>
-                        <p><i class="fa-solid fa-envelope" aria-hidden="true"></i> <a href="mailto:anhduong31208@gmail.com">anhduong31208@gmail.com</a></p>
-                    </div>
+                    <h4>Huỳnh Ánh Dương</h4>
+                    <p><strong>Điện thoại:</strong> 0919943843</p>
+                    <p><strong>Email:</strong> anhduong31208@gmail.com</p>
                 </div>
             </div>
-            <p class="copyright">© 2026 Dịch Thuật Trung - Việt. All rights reserved.</p>
+            <p class="copyright">&copy; 2026 Dịch Thuật Trung - Việt. All rights reserved.</p>
         </div>
     </footer>
 
-    <!-- JavaScript File -->
     <script src="script.js"></script>
 </body>
 </html>
