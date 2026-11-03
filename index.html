@@ -461,7 +461,7 @@ textarea {
 }
 </style>
 <script>
-   document.addEventListener('DOMContentLoaded', () => {
+ document.addEventListener('DOMContentLoaded', () => {
     const sourceLabel = document.getElementById('label-source');
     const targetLabel = document.getElementById('label-target');
     const btnSwap = document.getElementById('btn-swap');
@@ -471,7 +471,7 @@ textarea {
 
     let isVietToChin = true;
 
-    // Chuyển đổi ngôn ngữ dịch
+    // Đảo chiều ngôn ngữ
     btnSwap.addEventListener('click', () => {
         isVietToChin = !isVietToChin;
         if (isVietToChin) {
@@ -483,34 +483,13 @@ textarea {
             targetLabel.textContent = 'Tiếng Việt';
             sourceText.placeholder = '请输入中文...';
         }
-
+        // Tráo đổi nội dung 2 ô văn bản nếu có
         const temp = sourceText.value;
         sourceText.value = targetText.value;
         targetText.value = temp;
     });
 
-    // Hàm gọi API Lingva Translate (API chính)
-    async function translateWithLingva(text, src, tgt) {
-        const url = `https://lingva.ml/api/v1/${src}/${tgt}/${encodeURIComponent(text)}`;
-        const res = await fetch(url);
-        if (!res.ok) throw new Error('Lingva fetch error');
-        const data = await res.json();
-        return data.translation;
-    }
-
-    // Hàm gọi MyMemory API (Dự phòng nếu Lingva quá tải)
-    async function translateWithMyMemory(text, src, tgt) {
-        const url = `https://api.mymemory.translated.net/get?q=${encodeURIComponent(text)}&langpair=${src}|${tgt}`;
-        const res = await fetch(url);
-        if (!res.ok) throw new Error('MyMemory fetch error');
-        const data = await res.json();
-        if (data.responseData && data.responseData.translatedText) {
-            return data.responseData.translatedText;
-        }
-        throw new Error('MyMemory response invalid');
-    }
-
-    // Thực hiện dịch thuật
+    // Xử lý dịch thuật qua MyMemory API miễn phí
     btnTranslate.addEventListener('click', async () => {
         const text = sourceText.value.trim();
         if (!text) {
@@ -518,25 +497,23 @@ textarea {
             return;
         }
 
-        targetText.value = 'Đang xử lý bản dịch...';
+        targetText.value = 'Đang dịch...';
 
-        const srcLang = isVietToChin ? 'vi' : 'zh';
-        const tgtLang = isVietToChin ? 'zh' : 'vi';
+        const langPair = isVietToChin ? 'vi|zh' : 'zh|vi';
+        const apiUrl = `https://api.mymemory.translated.net/get?q=${encodeURIComponent(text)}&langpair=${langPair}`;
 
         try {
-            // Thử bằng API chính
-            const result = await translateWithLingva(text, srcLang, tgtLang);
-            targetText.value = result;
-        } catch (err1) {
-            console.warn('API 1 gặp sự cố, đang chuyển sang máy chủ dự phòng...', err1);
-            try {
-                // Thử qua API dự phòng
-                const fallbackResult = await translateWithMyMemory(text, srcLang, tgtLang);
-                targetText.value = fallbackResult;
-            } catch (err2) {
-                console.error('Tất cả API dịch thuật đều thất bại:', err2);
-                targetText.value = 'Không thể kết nối đến máy chủ dịch thuật. Vui lòng kiểm tra lại kết nối mạng hoặc thử lại sau ít phút.';
+            const response = await fetch(apiUrl);
+            const data = await response.json();
+
+            if (data && data.responseData) {
+                targetText.value = data.responseData.translatedText;
+            } else {
+                targetText.value = 'Không thể dịch văn bản. Vui lòng thử lại sau.';
             }
+        } catch (error) {
+            console.error('Lỗi khi gọi API dịch:', error);
+            targetText.value = 'Lỗi kết nối máy chủ dịch thuật.';
         }
     });
 });
